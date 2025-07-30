@@ -11,7 +11,7 @@
 
 with source_data as (
 
-    select 1 as id
+    select *, RANK() OVER (PARTITION BY CATEGORY ORDER BY LISTPRICE DESC) from dimproduct
     
 
 )
