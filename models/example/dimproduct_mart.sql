@@ -11,7 +11,7 @@
 
 with source_data as (
 
-    select * my_first_dbt_model
+    select *, RANK() OVER (PARTITION BY CATEGORY ORDER BY LISTPRICE DESC) from dimproduct
     
 
 )
