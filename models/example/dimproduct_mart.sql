@@ -11,7 +11,7 @@
 
 with source_data as (
 
-    select *, RANK() OVER (PARTITION BY CATEGORY ORDER BY LISTPRICE DESC) from dimproduct
+    select * from {{ref('dimproduct_prepared')}}
     
 
 )
